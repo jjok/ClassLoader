@@ -28,9 +28,17 @@ namespace jjok\ClassLoader;
  * Class file autoloader.
  * @see https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
  * @author Jonathan Jefferies (jjok)
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ClassLoader {
+	
+	public static function register($throw = true, $prepend = false) {
+		return spl_autoload_register(array(__CLASS__, 'load'), $throw, $prepend);
+	}
+	
+	public static function unregister() {
+		return spl_autoload_unregister(array(__CLASS__, 'load'));
+	}
 	
 	/**
 	 * Include the file for the given class.

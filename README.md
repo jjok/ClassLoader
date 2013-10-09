@@ -11,10 +11,11 @@ Usage
 1. Name your classes as in the PSR-0 [examples](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md#examples). 
 2. Register the autoloader:
 
-        spl_autoload_register(array('jjok\ClassLoader\ClassLoader', 'load'));
-
-        if(!spl_autoload_register(array('jjok\ClassLoader\ClassLoader', 'load'), true)) {
-            throw new \RuntimeException('Unable to register autoloader.');
+		try {
+        	spl_autoload_register(array('jjok\ClassLoader\ClassLoader', 'load'), true);
+        }
+        catch(Exception $e) {
+        	echo $e;
         }
 
 TODO
