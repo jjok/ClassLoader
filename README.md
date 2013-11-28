@@ -11,12 +11,12 @@ Usage
 1. Name your classes as in the PSR-0 [examples](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md#examples). 
 2. Register the autoloader:
 
-		try {
-        	jjok\ClassLoader\ClassLoader::register();
-        }
-        catch(Exception $e) {
-        	echo $e;
-        }
+	try {
+		jjok\ClassLoader\ClassLoader::register();
+	}
+	catch(Exception $e) {
+		echo $e;
+	}
 
 
 Copyright (c) 2013 Jonathan Jefferies
