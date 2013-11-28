@@ -12,16 +12,11 @@ Usage
 2. Register the autoloader:
 
 		try {
-        	spl_autoload_register(array('jjok\ClassLoader\ClassLoader', 'load'), true);
+        	jjok\ClassLoader\ClassLoader::register();
         }
         catch(Exception $e) {
         	echo $e;
         }
-
-TODO
-----
-
-* Add `AbstractClassLoader` class with `register` and `unregister` methods.
 
 
 Copyright (c) 2013 Jonathan Jefferies

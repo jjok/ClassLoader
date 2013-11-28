@@ -32,10 +32,20 @@ namespace jjok\ClassLoader;
  */
 class ClassLoader {
 	
+	/**
+	 * Register the autoloader.
+	 * @param string $throw
+	 * @param string $prepend
+	 * @return boolean
+	 */
 	public static function register($throw = true, $prepend = false) {
 		return spl_autoload_register(array(__CLASS__, 'load'), $throw, $prepend);
 	}
 	
+	/**
+	 * Unregister the autoloader.
+	 * @return boolean
+	 */
 	public static function unregister() {
 		return spl_autoload_unregister(array(__CLASS__, 'load'));
 	}
